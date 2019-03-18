@@ -41,8 +41,13 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = -1;
+		for(int i = 0; i < this.produtos.length; i++){
+			if (this.produtos[i].getCodigo() == codigo){
+				indice = i;
+			}
+		}
+		return indice;
 	}
 
 	/**
@@ -52,16 +57,22 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean existe = false;
+		for(ProdutoNaoPerecivel p : this.produtos){
+			if (p.getCodigo() == codigo){
+				existe = true;
+			}
+		}
+
+		return existe;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		this.produtos[this.index] = produto;
+		this.index++;
 	}
 
 	/**
@@ -70,8 +81,11 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * utilizado.
 	 */
 	public void atualizar(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		for(int i = 0; i < this.produtos.length; i++){
+			if(this.produtos[i].getCodigo() == produto.getCodigo()){
+				this.produtos[i] =produto;
+			}
+		}
 	}
 
 	/**

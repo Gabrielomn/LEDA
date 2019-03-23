@@ -1,5 +1,7 @@
 package produto;
 
+import java.util.List;
+
 /**
  * Classe que representa um repositório de produtos usando arrays como estrutura
  * sobrejacente. Alguns métodos (atualizar, remover e procurar) ou executam com
@@ -14,11 +16,11 @@ package produto;
  * @author Adalberto
  *
  */
-public class RepositorioProdutoNaoPerecivelArray {
+public class RepositorioProdutoNaoPerecivelArray<T extends Produto> {
 	/**
 	 * A estrutura (array) onde os produtos sao mantidos.
 	 */
-	private ProdutoNaoPerecivel[] produtos;
+	private Produto[] produtos;
 
 	/**
 	 * A posicao do ultimo elemento inserido no array de produtos. o valor
@@ -26,9 +28,10 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 */
 	private int index = -1;
 
+
 	public RepositorioProdutoNaoPerecivelArray(int size) {
 		super();
-		this.produtos = new ProdutoNaoPerecivel[size];
+		this.produtos = new Produto[size];
 	}
 
 	/**
@@ -41,8 +44,13 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = -1;
+		for(int i = 0; i < this.produtos.length; i++){
+			if(this.produtos[i].getCodigo() == codigo){
+				indice = i;
+			}
+		}
+		return indice;
 	}
 
 	/**
@@ -52,16 +60,24 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean existe = false;
+
+		for(Produto p: this.produtos){
+			if(p.getCodigo() == codigo){
+				existe = true;
+			}
+		}
+
+		return existe;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		this.produtos[this.index] = produto;
+		this.index++;
+
 	}
 
 	/**
@@ -69,9 +85,13 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * esteja no array. Note que, para localizacao, o código do produto será
 	 * utilizado.
 	 */
-	public void atualizar(ProdutoNaoPerecivel produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+	public void atualizar(Produto produto) {
+
+		for(int i = 0; i< this.produtos.length; i++){
+			if(this.produtos[i].getCodigo() == produto.getCodigo()){
+				this.produtos[i] = produto;
+			}
+		}
 	}
 
 	/**
@@ -82,8 +102,37 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int i = 0;
+		int achadoEm = 0;
+		boolean naoAchou = true;
+		while(i < this.produtos.length && naoAchou){
+			if(this.produtos[i].getCodigo() == codigo){
+				achadoEm = i;
+				naoAchou = false;
+			}
+			else{
+				i++;
+			}
+		}
+
+		if(naoAchou){
+			throw new RuntimeException();
+		}
+
+		for(i = achadoEm; i < this.produtos.length - 1; i++){
+			this.swap(i, i+1);
+		}
+		this.index--;
+
+
+
+	}
+
+	private void swap(int indice1, int indice2){
+		Produto p1 = this.produtos[indice1];
+		this.produtos[indice1] = this.produtos[indice2];
+		this.produtos[indice2] = p1;
+
 	}
 
 	/**
@@ -93,9 +142,13 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @param codigo
 	 * @return
 	 */
-	public ProdutoNaoPerecivel procurar(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+	public Produto procurar(int codigo) {
+		for(Produto p: this.produtos){
+			if(p.getCodigo() == codigo){
+				return p;
+			}
+		}
+		throw new IllegalArgumentException("Produto nao encontrado.");
 	}
 
 }

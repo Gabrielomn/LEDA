@@ -11,13 +11,13 @@ import java.util.ArrayList;
  *
  * @author Adalberto
  */
-public class RepositorioProdutoArrayList {
+public class RepositorioProdutoArrayList<T extends  Produto> {
 
 	/**
 	 * A estrutura onde os produtos sao mantidos. Voce nao precisa se preocupar
 	 * por enquanto com o uso de generics em ArrayList.
 	 */
-	private ArrayList produtos;
+	private ArrayList<T> produtos;
 
 	/**
 	 * A posicao do ultimo elemento inserido no array de produtos. o valor
@@ -27,7 +27,7 @@ public class RepositorioProdutoArrayList {
 
 	public RepositorioProdutoArrayList(int size) {
 		super();
-		this.produtos = new ArrayList();
+		this.produtos = new ArrayList<T>();
 	}
 
 	/**
@@ -40,8 +40,15 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int tamanho = this.produtos.size();
+		for(int i = 0; i < tamanho; i++){
+			if(this.produtos.get(i).getCodigo() == codigo){
+				return i;
+			}
+
+		}
+
+		throw new RuntimeException("Codigo de produto nao cadastrado.");
 	}
 
 	/**
@@ -51,16 +58,21 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean produtoExistente = false;
+
+		for(Produto p: this.produtos){
+			if(p.getCodigo() == codigo){
+				produtoExistente = true;
+			}
+		}
+		return produtoExistente;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		this.produtos.add((T) produto);
 	}
 
 	/**
@@ -69,8 +81,25 @@ public class RepositorioProdutoArrayList {
 	 * utilizado.
 	 */
 	public void atualizar(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean naoAchou = true;
+		int i = 0;
+		int tamanho = this.produtos.size();
+
+		while (naoAchou && i < tamanho){
+
+			if(this.produtos.get(i).getCodigo() == produto.getCodigo()) {
+				this.produtos.set(i, (T) produto);
+				naoAchou = false;
+				break;
+			}else{
+				i++;
+			}
+
+		}
+
+		if(naoAchou){
+			throw new RuntimeException();
+		}
 	}
 
 	/**
@@ -81,8 +110,17 @@ public class RepositorioProdutoArrayList {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int tamanho = this.produtos.size();
+		boolean naoAchou = true;
+
+		for(int i = 0; i < tamanho; i++){
+			this.produtos.remove(i);
+			naoAchou = false;
+		}
+		if (naoAchou){
+			throw new RuntimeException();
+		}
+
 	}
 
 	/**
@@ -93,7 +131,12 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public Produto procurar(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		for(Produto p: this.produtos){
+			if(p.getCodigo() == codigo){
+				return p;
+			}
+		}
+
+		throw new RuntimeException();
 	}
 }

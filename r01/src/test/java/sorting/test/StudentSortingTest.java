@@ -7,6 +7,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import sorting.AbstractSorting;
+import sorting.simpleSorting.BubbleSort;
+import sorting.simpleSorting.InsertionSort;
+import sorting.simpleSorting.SelectionSort;
+import sorting.variationsOfBubblesort.SimultaneousBubblesort;
 
 public class StudentSortingTest {
 
@@ -15,6 +19,7 @@ public class StudentSortingTest {
 	private Integer[] vetorVazio = {};
 	private Integer[] vetorValoresRepetidos;
 	private Integer[] vetorValoresIguais;
+	private Integer[] vetorInvertido;
 
 	public AbstractSorting<Integer> implementation;
 
@@ -26,6 +31,7 @@ public class StudentSortingTest {
 				11, 18, 36 });
 		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 0, 5, 1, 4 });
 		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
+		populaVetorInvertido(new Integer[] { 99, 83, 44, 21, 11, 9, 8, 4, 2, -9, -15, -13 });
 
 		getImplementation();
 	}
@@ -36,10 +42,12 @@ public class StudentSortingTest {
 	 * do aluno
 	 */
 	private void getImplementation() {
-		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
-		// null
-		this.implementation = null;
-		Assert.fail("Implementation not provided");
+
+		this.implementation = new SimultaneousBubblesort<>();
+	}
+
+	public void populaVetorInvertido(Integer[] arrayPadrao) {
+		this.vetorInvertido = Arrays.copyOf(arrayPadrao, arrayPadrao.length);
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -99,6 +107,10 @@ public class StudentSortingTest {
 		genericTest(vetorValoresRepetidos);
 	}
 
+	@Test
+	public void testSort06() {
+		genericTest(vetorInvertido);
+	}
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
 	/**
 	 * O ALUNO PODE IMPLEMENTAR METODOS DE ORDENAÇÃO TESTANDO O SORT COM TRES

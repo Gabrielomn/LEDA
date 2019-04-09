@@ -2,6 +2,8 @@ package orderStatistic;
 
 public class OrderStatisticsSelectionImpl<T extends Comparable<T>> implements OrderStatistics<T> {
 
+
+	private T maior;
 	/**
 	 * Esta eh uma implementacao do calculo da estatistica de ordem seguindo a estrategia 
 	 * de usar o selection sem modificar o array original. Note que seu algoritmo vai 
@@ -21,8 +23,66 @@ public class OrderStatisticsSelectionImpl<T extends Comparable<T>> implements Or
 	 */
 	@Override
 	public T getOrderStatistics(T[] array, int k) {
-		//TODO implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(k > array.length){
+			return null;
+		}
+		if(array== null){
+			return null;
+		}
+
+		if(this.maior == null){
+			this.maior = findMaior(array);
+		}
+		if(k == 1){
+			return findMenor(array);
+		}else{
+			return find(array, getOrderStatistics(array, k -1));
+
+		}
+	}
+
+	private T find(T[] array, T limiteInferior){
+		T menor = this.maior;
+
+		for (int i = 0; i < array.length; i++){
+
+			if(verificaSeEstaNoIntervalo(array[i], limiteInferior, menor)) {
+				menor = array[i];
+			}
+		}
+		return menor;
+
+	}
+
+
+	private T findMenor(T[] array){
+		T menor = array[0];
+		for(int i = 0; i < array.length; i++){
+			if (array[i].compareTo(menor) < 0){
+				menor = array[i];
+			}
+		}
+
+
+		return menor;
+	}
+
+	private T findMaior(T[] array){
+		T maior = array[0];
+
+		for(int i = 0; i < array.length; i++){
+			if(array[i].compareTo(maior) > 0){
+				maior = array[i];
+
+			}
+		}
+
+		return maior;
+	}
+
+
+	private boolean verificaSeEstaNoIntervalo(T elemento, T limiteInferior, T menorAtual){
+		return (elemento.compareTo(menorAtual) < 0 && elemento.compareTo(limiteInferior) > 0);
 	}
 
 }

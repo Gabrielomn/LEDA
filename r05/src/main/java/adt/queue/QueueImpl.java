@@ -4,27 +4,25 @@ public class QueueImpl<T> implements Queue<T> {
 
 	private T[] array;
 	private int tail;
-	private int head;
 
 	@SuppressWarnings("unchecked")
 	public QueueImpl(int size) {
 		this.array = (T[]) new Object[size];
 		this.tail = -1;
-		this.head = 0;
 	}
 
 	@Override
 	public T head() {
-		if(this.tail == -1) {
+		if (this.tail == -1) {
 			return null;
-		}else {
-			return this.array[head];
+		} else {
+			return this.array[0];
 		}
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return this.head == 0 && this.tail == -1;
+		return this.tail == -1;
 	}
 
 	@Override
@@ -33,31 +31,33 @@ public class QueueImpl<T> implements Queue<T> {
 	}
 
 	private void shiftLeft() {
-		int i = 1;
-		while(i < this.array.length) {
-			this.array[i - 1] = this.array[i];
-			i++;
+			for(int i = 1; i < array.length; i++){
+				this.array[i - 1] = this.array[i];
+
 		}
 	}
 
 	@Override
 	public void enqueue(T element) throws QueueOverflowException {
-		if(!this.isFull()) {
-			this.array[tail + 1] = element;
-			this.tail++;
-		}else {
-			throw new QueueOverflowException();
+		if (element != null) {
+			if (!this.isFull()) {
+				this.array[tail + 1] = element;
+				this.tail++;
+			} else {
+				throw new QueueOverflowException();
+			}
 		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
 
-		if(!this.isEmpty()) {
-			T element= this.array[head];
+		if (!this.isEmpty()) {
+			T element = this.array[0];
+			this.tail--;
 			this.shiftLeft();
 			return element;
-		}else {
+		} else {
 			throw new QueueUnderflowException();
 		}
 	}

@@ -16,32 +16,51 @@ public class CircularQueue<T> implements Queue<T> {
 
 	@Override
 	public void enqueue(T element) throws QueueOverflowException {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(this.isEmpty() ) {
+			this.head = 0; 
+			this.tail = 0;
+		}
+		
+		
+		if(!this.isFull()) {
+			this.array[(tail) % this.array.length] = element;
+			this.elements++;
+			this.tail++;
+
+		}else {
+			throw new QueueOverflowException();
+		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(!this.isEmpty()) {
+			T element = this.array[(head)%this.array.length];
+			this.elements--;
+			this.head++;
+			return element;
+		}else {
+			throw new QueueUnderflowException();
+		}
 	}
 
 	@Override
 	public T head() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!this.isEmpty()) {
+			return this.array[head];
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.elements == 0;
 	}
 
 	@Override
 	public boolean isFull() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.elements == this.array.length;
 	}
 
 }

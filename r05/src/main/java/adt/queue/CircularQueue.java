@@ -16,30 +16,32 @@ public class CircularQueue<T> implements Queue<T> {
 
 	@Override
 	public void enqueue(T element) throws QueueOverflowException {
-		if(this.isEmpty() ) {
-			this.head = 0; 
-			this.tail = 0;
-		}
-		
-		
-		if(!this.isFull()) {
-			this.array[(tail) % this.array.length] = element;
-			this.elements++;
-			this.tail++;
+		if (element != null) {
 
-		}else {
-			throw new QueueOverflowException();
+			if (this.isEmpty()) {
+				this.head = 0;
+				this.tail = 0;
+			}
+
+			if (!this.isFull()) {
+				this.array[(tail) % this.array.length] = element;
+				this.elements++;
+				this.tail++;
+
+			} else {
+				throw new QueueOverflowException();
+			}
 		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
-		if(!this.isEmpty()) {
-			T element = this.array[(head)%this.array.length];
+		if (!this.isEmpty()) {
+			T element = this.array[(head) % this.array.length];
 			this.elements--;
 			this.head++;
 			return element;
-		}else {
+		} else {
 			throw new QueueUnderflowException();
 		}
 	}

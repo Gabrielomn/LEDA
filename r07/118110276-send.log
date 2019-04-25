@@ -7,3 +7,13 @@
   <level>FINE</level>
   <message>File 118110276-GABRIEL DE OLIVEIRA MEIRA NOBREGA.zip was received. It was sent by GABRIEL DE OLIVEIRA MEIRA NOBREGA from IP 150.165.42.182</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-25T19:17:52.699-0300</date>
+  <logger>GABRIEL DE OLIVEIRA MEIRA NOBREGA</logger>
+  <level>FINE</level>
+  <message>File 118110276-GABRIEL DE OLIVEIRA MEIRA NOBREGA.zip was received. It was sent by GABRIEL DE OLIVEIRA MEIRA NOBREGA from IP 192.168.25.66</message>
+</record>

@@ -60,7 +60,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 				this.setData(this.getNext().getData());
 				this.setNext(this.getNext().getNext());
 			} else {
-				if (this.getNext() != null) {
+				if (this.getNext().getData() != null) {
 					this.getNext().remove(element);
 				}
 			}

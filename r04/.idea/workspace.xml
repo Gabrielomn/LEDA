@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd5a0aae-4325-456b-96c0-89f457a4db73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/version.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/118110276-send.log" beforeDir="false" afterPath="$PROJECT_DIR$/../r05/118110276-send.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/main/java/adt/queue/CircularQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../r05/src/main/java/adt/queue/CircularQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/main/java/adt/stack/StackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../r05/src/main/java/adt/stack/StackImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/test 2/java/adt/queue/StudentQueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/test 2/java/adt/stack/StudentStackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/test/java/adt/queue/StudentQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../r05/src/test/java/adt/queue/StudentQueueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../r05/src/test/java/adt/stack/StudentStackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../r05/src/test/java/adt/stack/StudentStackTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="fd5a0aae-4325-456b-96c0-89f457a4db73" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -249,16 +238,18 @@
       <workItem from="1554839086097" duration="597000" />
       <workItem from="1555546118129" duration="7000" />
       <workItem from="1555955930003" duration="32000" />
+      <workItem from="1556229656437" duration="46000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13038000" />
+    <option name="totallyTimeSpent" value="13084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26656026" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27134877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />

@@ -74,6 +74,7 @@ public class HashtableClosedAddressImpl<T> extends AbstractHashtableClosedAddres
 
          ((LinkedList) this.table[hash]).add(element);
       }
+
    }
 
    @Override
@@ -81,8 +82,14 @@ public class HashtableClosedAddressImpl<T> extends AbstractHashtableClosedAddres
       if(element != null) {
          int hash = ((HashFunctionClosedAddress) this.getHashFunction()).hash(element);
          if (!(this.table[hash] == null)) {
-            ((LinkedList) this.table[hash]).remove(element);
+             if(((LinkedList) this.table[hash]).contains(element)){
+
+             ((LinkedList) this.table[hash]).remove(element);
             this.elements--;
+            if (((LinkedList) this.table[hash]).size() >= 1){
+               this.COLLISIONS--;
+            }
+             }
          }
       }
    }

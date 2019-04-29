@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="842b69fa-9501-43b8-ad3e-2b28e34b558d" name="Default Changelist" comment="" />
+    <list default="true" id="842b69fa-9501-43b8-ad3e-2b28e34b558d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adt/hashtable/closed/HashtableClosedAddressImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adt/hashtable/closed/HashtableClosedAddressImpl.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,42 +22,38 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="23" />
+          <entry key="class" value="1" />
+          <entry key="java" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="23" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1144" />
+          <entry key="java" value="1373" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1144" />
+          <entry key="JAVA" value="1373" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/hashfunction/HashFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/closed/HashtableClosedAddressImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+            <state relative-caret-position="149">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/StudentTestHashtableClosedAddressDivisionMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="765">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#2304#2305#0" expanded="true" />
@@ -82,10 +81,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/closed/AbstractHashtableClosedAddress.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/SimpleTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="450">
+              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Method.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
             </state>
           </provider>
         </entry>
@@ -144,6 +152,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/adt/hashtable/AbstractHashtable.java" />
+        <option value="$PROJECT_DIR$/src/test/java/adt/hashtable/closed/SimpleTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/adt/hashtable/closed/HashtableClosedAddressImpl.java" />
       </list>
     </option>
@@ -250,7 +259,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556567881974" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556569406873" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -265,7 +274,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StudentTestHashtableClosedAddressDivisionMethod">
+  <component name="RunManager" selected="Application.SimpleTests">
+    <configuration name="SimpleTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="adt.hashtable.closed.SimpleTests" />
+      <module name="submission" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="adt.hashtable.closed.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StudentTestHashtableClosedAddressDivisionMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="submission" />
       <extension name="coverage">
@@ -297,11 +319,13 @@
     <list>
       <item itemvalue="JUnit.StudentTestHashtableClosedAddressMultiplicationMethod" />
       <item itemvalue="JUnit.StudentTestHashtableClosedAddressDivisionMethod" />
+      <item itemvalue="Application.SimpleTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StudentTestHashtableClosedAddressDivisionMethod" />
+        <item itemvalue="Application.SimpleTests" />
         <item itemvalue="JUnit.StudentTestHashtableClosedAddressMultiplicationMethod" />
+        <item itemvalue="JUnit.StudentTestHashtableClosedAddressDivisionMethod" />
       </list>
     </recent_temporary>
   </component>
@@ -319,18 +343,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StudentTestHashtableClosedAddressMultiplicationMethod - 2019.04.29 at 16h 39m 20s.xml">
-      <configuration name="StudentTestHashtableClosedAddressMultiplicationMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 16h 39m 33s.xml">
-      <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 16h 49m 19s.xml">
-      <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 16h 50m 32s.xml">
-      <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 16h 52m 06s.xml">
       <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
     </history-entry>
@@ -349,6 +361,18 @@
     <history-entry file="StudentTestHashtableClosedAddressMultiplicationMethod - 2019.04.29 at 16h 56m 32s.xml">
       <configuration name="StudentTestHashtableClosedAddressMultiplicationMethod" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StudentTestHashtableClosedAddressMultiplicationMethod - 2019.04.29 at 16h 58m 00s.xml">
+      <configuration name="StudentTestHashtableClosedAddressMultiplicationMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 16h 58m 03s.xml">
+      <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentTestHashtableClosedAddressDivisionMethod - 2019.04.29 at 17h 04m 26s.xml">
+      <configuration name="StudentTestHashtableClosedAddressDivisionMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentTestHashtableClosedAddressMultiplicationMethod - 2019.04.29 at 17h 04m 29s.xml">
+      <configuration name="StudentTestHashtableClosedAddressMultiplicationMethod" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -359,15 +383,15 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -449,16 +473,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/AbstractHashtable.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/StudentTestHashtableClosedAddressMultiplicationMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="278">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/reflect/Method.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/StudentTestHashtableClosedAddressDivisionMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="765">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#2304#2305#0" expanded="true" />
@@ -467,17 +498,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/StudentTestHashtableClosedAddressMultiplicationMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/AbstractHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="493">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/adt/hashtable/closed/SimpleTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adt/hashtable/closed/HashtableClosedAddressImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        <state relative-caret-position="149">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

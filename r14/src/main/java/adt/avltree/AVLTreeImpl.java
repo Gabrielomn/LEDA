@@ -16,9 +16,105 @@ import adt.bt.BTNode;
 public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements
 		AVLTree<T> {
 
+	@Override
+	public void remove(T element) {
+		BSTNode<T> aux = search(element);
+		if(!this.isEmpty()){
+			if(this.getRoot().equals(aux)){
+				aux = sucessor(element);
+				System.out.println(aux.getData());
+				if (aux == null){
+					aux = predecessor(element);
+				}
+				if(aux == null) {
+					this.getRoot().setData(null);
+				}else {
+					T auxData = element;
+					this.getRoot().setData(aux.getData());
+					aux.setData(auxData);
+					remove(aux);
+				}
+			}
+			else if(!aux.isEmpty()){
+				remove(aux);
+			}
+		}
+
+	}
+
+	private void remove(BSTNode<T> curr){
+		if(curr.isLeaf()){
+			setFatherNil(curr);
+			rebalanceUp(curr);
+		}else if(curr.getRight().isEmpty() || curr.getLeft().isEmpty()){
+			changeFatherAndSon(curr);
+			rebalanceUp(curr);
+
+		}else{
+			BSTNode<T> sucessor = sucessor(curr.getData());
+			remove(sucessor.getData());
+			curr.setData(sucessor.getData());
+		}
+	}
+
+	private void changeFatherAndSon(BSTNode<T> curr) {
+		if(curr.getLeft().isEmpty()){
+
+			BSTNode<T> newCurr = (BSTNode) curr.getRight();
+			BSTNode<T> parent = (BSTNode) curr.getParent();
+			if(parent.getRight().equals(curr)){
+				parent.setRight(newCurr);
+			}else if(parent.getLeft().equals(curr)){
+				parent.setLeft(newCurr);
+			}
+			newCurr.setParent(parent);
+		}else{
+			BSTNode<T> newCurr = (BSTNode) curr.getLeft();
+			BSTNode<T> parent = (BSTNode) curr.getParent();
+			if(parent.getRight().equals(curr)){
+				parent.setRight(newCurr);
+			}else if(parent.getLeft().equals(curr)){
+				parent.setLeft(newCurr);
+			}
+			newCurr.setParent(parent);
+		}
+	}
+
+	private void setFatherNil(BSTNode<T> curr) {
+		BSTNode<T> parent = (BSTNode<T>) curr.getParent();
+		if(parent.getLeft() != null && parent.getLeft().equals(curr)){
+			parent.setLeft(new BSTNode.Builder<T>().data(null).left(null).right(null).parent(parent).build());
+		}else if(parent.getRight() != null && parent.getRight().equals(curr)){
+			parent.setRight(new BSTNode.Builder<T>().data(null).left(null).right(null).parent(parent).build());
+		}
+	}
+
+
 	// TODO Do not forget: you must override the methods insert and remove
 	// conveniently.
+	@Override
+	public void insert(T element) {
+		if (element != null) {
+			insert(this.getRoot(), element);
+		}
 
+	}
+
+	private void insert(BSTNode<T> curr, T element){
+		if(curr.isEmpty()){
+			curr.setData(element);
+			curr.setLeft(new BSTNode.Builder<T>().data(null).left(null).right(null).parent(curr).build());
+			curr.setRight(new BSTNode.Builder<T>().data(null).left(null).right(null).parent(curr).build());
+		}else{
+			if(curr.getData().compareTo(element) > 0){
+				insert((BSTNode<T>)curr.getLeft(), element);
+			}
+			if(curr.getData().compareTo(element) < 0){
+				insert((BSTNode<T>)curr.getRight(), element);
+			}
+			rebalance(curr);
+		}
+	}
 	// AUXILIARY
 	protected int calculateBalance(BSTNode<T> node) {
 		if(!node.isEmpty()) {
@@ -34,14 +130,14 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements
 			if(calculateBalance((BSTNode<T>) node.getLeft()) > 0) {//DESBALANCEADO PARA A ESQUERDA DUPLAMENTE ROTACAO RR
 				simpleRightRotation(node);
 			}else{//FORMOU UM JOELHO, ROTACAO RL
-				doubleLeftRotation(node);
+				doubleRightRotation(node);
 			}
 
 		}else if (calculateBalance(node) < -1){//nesse caso, está desbalanceado para a direita! rotação LL ou LR
 			if(calculateBalance((BSTNode<T>) node.getRight()) < 0){//DESBALANCEADO PARA A DIREITA DUPLAMENTE ROTACAO LL
 				simpleLeftRotation(node);
 			}else{//formou o joelho
-				doubleRightRotation(node);
+				doubleLeftRotation(node);
 			}
 
 		}else{//nao esta desbalanceada
@@ -50,9 +146,35 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements
 	}
 
 	private void doubleLeftRotation(BSTNode<T> node) {
+		BSTNode<T> son = (BSTNode<T>) node.getRight();
+		BSTNode<T> grandSon = (BSTNode<T>) son.getLeft();
+		BSTNode<T> grandSonRightChild = (BSTNode<T>) grandSon.getRight();
+		BSTNode<T> grandSonLeftChild = (BSTNode<T>) grandSon.getLeft();
+
+		son.setLeft(grandSonRightChild);
+		node.setRight(grandSonLeftChild);
+		grandSon.setParent(node.getParent());
+		grandSon.setRight(son);
+		grandSon.setLeft(node);
+		if(node.equals(this.getRoot())){
+			this.root = grandSon;
+		}
 	}
 
 	private void doubleRightRotation(BSTNode<T> node) {
+		BSTNode<T> son = (BSTNode<T>) node.getLeft();
+		BSTNode<T> grandSon = (BSTNode<T>) son.getRight();
+		BSTNode<T> grandSonRightChild = (BSTNode<T>) grandSon.getRight();
+		BSTNode<T> grandSonLeftChild = (BSTNode<T>) grandSon.getLeft();
+
+		son.setRight(grandSonLeftChild);
+		node.setLeft(grandSonRightChild);
+		grandSon.setParent(node.getParent());
+		grandSon.setLeft(son);
+		grandSon.setRight(node);
+		if(node.equals(this.getRoot())){
+			this.root = grandSon;
+		}
 	}
 
 	private void simpleRightRotation(BSTNode<T> node) {
@@ -100,7 +222,11 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements
 	}
 	// AUXILIARY
 	protected void rebalanceUp(BSTNode<T> node) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		BSTNode<T> parent = (BSTNode<T>) node.getParent();
+		while(parent != null){
+			rebalance(parent);
+			parent =(BSTNode<T>) parent.getParent();
+		}
+
 	}
 }

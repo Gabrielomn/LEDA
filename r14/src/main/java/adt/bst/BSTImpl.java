@@ -1,5 +1,7 @@
 package adt.bst;
 
+import adt.bt.BTNode;
+
 public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
 	protected BSTNode<T> root;
@@ -212,17 +214,36 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
 	}
 
-	private void remove(BSTNode<T> curr){
-		if(curr.isLeaf()){
-			setFatherNil(curr);
-		}else if(curr.getRight().isEmpty() || curr.getLeft().isEmpty()){
-			changeFatherAndSon(curr);
-		}else{
-			BSTNode<T> sucessor = sucessor(curr.getData());
-			remove(sucessor.getData());
-			curr.setData(sucessor.getData());
+	protected BSTNode<T> remove(BSTNode<T> curr){
+		BSTNode<T> removed = curr;
+		if (!curr.isEmpty()) {
+			if (curr.getLeft().isEmpty() || curr.getRight().isEmpty()) {
+				BSTNode<T> newThis = (BSTNode<T>) curr.getLeft();
+				if (newThis.isEmpty())
+					newThis = (BSTNode<T>) curr.getRight();
+				curr.setData(newThis.getData());
+				curr.setLeft(newThis.getLeft());
+				curr.setRight(newThis.getRight());
+				if (!isNull(curr.getLeft())) {
+					curr.getLeft().setParent(curr);
+				}
+				if (!isNull(curr.getRight())) {
+					curr.getRight().setParent(curr);
+				}
+
+			} else {
+				BSTNode<T> newThis = sucessor(curr.getData());
+				curr.setData(newThis.getData());
+				removed = remove(newThis);
+			}
 		}
+		return removed;
 	}
+
+	private boolean isNull(Object o) {
+		return o == null;
+	}
+
 	private void changeFatherAndSon(BSTNode<T> curr) {
 		if(curr.getLeft().isEmpty()){
 

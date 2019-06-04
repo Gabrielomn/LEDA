@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-06-03T18:16:44.150-0300</date>
+  <logger>GABRIEL DE OLIVEIRA MEIRA NOBREGA</logger>
+  <level>FINE</level>
+  <message>File 118110276-GABRIEL DE OLIVEIRA MEIRA NOBREGA.zip was received. It was sent by GABRIEL DE OLIVEIRA MEIRA NOBREGA from IP 10.0.0.130 at 03-06-2019 18*16*44</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-06-03T20:42:59.527-0300</date>
+  <logger>GABRIEL DE OLIVEIRA MEIRA NOBREGA</logger>
+  <level>FINE</level>
+  <message>File 118110276-GABRIEL DE OLIVEIRA MEIRA NOBREGA.zip was received. It was sent by GABRIEL DE OLIVEIRA MEIRA NOBREGA from IP 10.0.0.130 at 03-06-2019 20*42*59</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-06-03T21:07:09.859-0300</date>
+  <logger>GABRIEL DE OLIVEIRA MEIRA NOBREGA</logger>
+  <level>FINE</level>
+  <message>File 118110276-GABRIEL DE OLIVEIRA MEIRA NOBREGA.zip was received. It was sent by GABRIEL DE OLIVEIRA MEIRA NOBREGA from IP 10.0.0.130 at 03-06-2019 21*07*09</message>
+</record>

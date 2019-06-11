@@ -173,9 +173,6 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T>
 
 	}
 
-	public boolean isLeftChild(RBNode<T> node){
-		return node.getParent().getLeft().equals(node);
-	}
 
 	protected void fixUpCase4(RBNode<T> node) {
 		RBNode<T> next = node;

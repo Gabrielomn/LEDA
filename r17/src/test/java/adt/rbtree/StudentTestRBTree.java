@@ -11,6 +11,8 @@ import adt.rbtree.RBNode.Colour;
 
 import java.util.Random;
 
+//TESTS BY @ERICBRENO
+
 public class StudentTestRBTree {
 
 	public RBTreeImpl<Integer> myRB;

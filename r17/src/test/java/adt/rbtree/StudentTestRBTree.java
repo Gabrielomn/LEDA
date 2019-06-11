@@ -467,7 +467,6 @@ public class StudentTestRBTree {
         assertEquals(myRB.blackHeight(), 3);
         assertTrue(myRB.verifyProperties());
         assertFalse(myRB.isEmpty());
-        new RuntimeException().printStackTrace();
         Assert.assertArrayEquals(myRB.rbPreOrder(), awyiss((RBNode<Integer>) myRB.getRoot()));
 
         myRB.insert(-4);
@@ -488,8 +487,7 @@ public class StudentTestRBTree {
         assertFalse(myRB.search(-29).isEmpty());
         assertEquals(myRB.blackHeight(), 3);
         Assert.assertArrayEquals(myRB.rbPreOrder(), awyiss((RBNode<Integer>) myRB.getRoot()));
-        System.out.println(Runtime.getRuntime().freeMemory());
-        System.out.println(Runtime.getRuntime().availableProcessors());
+
     }
 
     /**

@@ -153,7 +153,6 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T>
 	}
 
 	protected void fixUpCase2(RBNode<T> node) {
-		System.out.println(node.getParent());
 		if(!((RBNode<T>)node.getParent()).getColour().equals(Colour.BLACK)){
 			fixUpCase3(node);
 		}
@@ -172,6 +171,10 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T>
 			fixUpCase4(node);
 		}
 
+	}
+
+	public boolean isLeftChild(RBNode<T> node){
+		return node.getParent().getLeft().equals(node);
 	}
 
 	protected void fixUpCase4(RBNode<T> node) {
@@ -202,7 +205,7 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T>
 
 	public void leftRotation(RBNode<T> node){
 		RBNode<T> aux = (RBNode<T>) Util.leftRotation(node);
-		if(this.getRoot().equals(aux)){
+		if(aux.getParent() == null){
 			this.root = aux;
 		}
 	}
@@ -210,11 +213,10 @@ public class RBTreeImpl<T extends Comparable<T>> extends BSTImpl<T>
 
 	public void rightRotation(RBNode<T> node){
 		RBNode<T> aux = (RBNode<T>) Util.rightRotation(node);
-		if(this.getRoot().equals(aux)){
+		if(aux.getParent() == null){
 			this.root = aux;
 		}
 	}
-
 
 
 }

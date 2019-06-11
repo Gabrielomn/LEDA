@@ -15,6 +15,8 @@
       <change beforePath="$PROJECT_DIR$/../r14/target/submission-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../r14/target/submission-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../r14/target/test-classes/adt/avltree/StudentAVLTest2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../r15/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../r15/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adt/rbtree/RBTreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adt/rbtree/RBTreeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/adt/rbtree/RBTreeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="120">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#284#285#0" expanded="true" />
@@ -53,16 +55,18 @@
                 <element signature="e#1550#1551#0" expanded="true" />
                 <element signature="e#2416#2417#0" expanded="true" />
                 <element signature="e#2472#2473#0" expanded="true" />
+                <element signature="e#4687#4688#0" expanded="true" />
+                <element signature="e#4740#4741#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="349" selection-start-line="349" selection-end-line="349" />
+            <state relative-caret-position="100">
+              <caret line="469" selection-start-line="469" selection-end-line="469" />
               <folding>
                 <element signature="e#316#317#0" expanded="true" />
                 <element signature="e#355#356#0" expanded="true" />
@@ -131,9 +135,9 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/adt/bst/BSTImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/adt/bt/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/adt/rbtree/RBTreeImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java" />
       </list>
     </option>
   </component>
@@ -245,6 +249,11 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="rbtree" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="submission" type="b2602c69:ProjectViewProjectNode" />
+              <item name="r17" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -252,6 +261,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -304,44 +314,44 @@
       <updated>1560195180816</updated>
       <workItem from="1560195190084" duration="8877000" />
       <workItem from="1560263545286" duration="910000" />
-      <workItem from="1560283061276" duration="753000" />
+      <workItem from="1560283061276" duration="1313000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 11h 40m 40s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 12m 58s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 11h 41m 03s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 13m 41s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 11h 46m 46s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 14m 24s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 03m 21s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 14m 52s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 04m 01s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 15m 10s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 06m 46s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 15m 31s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 07m 19s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 16m 32s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 07m 30s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 17m 53s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 09m 21s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 18m 43s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 10m 06s.xml">
+    <history-entry file="StudentTestRBTree - 2019.06.11 at 17h 19m 25s.xml">
       <configuration name="StudentTestRBTree" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10540000" />
+    <option name="totallyTimeSpent" value="11100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -410,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adt/rbtree/RBNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adt/rbtree/RBTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -431,23 +434,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/adt/rbtree/RBNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
-          <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#18744#18745#0" expanded="true" />
-            <element signature="e#18803#18804#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adt/rbtree/RBTreeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+        <state relative-caret-position="120">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#284#285#0" expanded="true" />
@@ -458,6 +455,21 @@
             <element signature="e#1550#1551#0" expanded="true" />
             <element signature="e#2416#2417#0" expanded="true" />
             <element signature="e#2472#2473#0" expanded="true" />
+            <element signature="e#4687#4688#0" expanded="true" />
+            <element signature="e#4740#4741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/adt/rbtree/StudentTestRBTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="469" selection-start-line="469" selection-end-line="469" />
+          <folding>
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#18744#18745#0" expanded="true" />
+            <element signature="e#18803#18804#0" expanded="true" />
           </folding>
         </state>
       </provider>

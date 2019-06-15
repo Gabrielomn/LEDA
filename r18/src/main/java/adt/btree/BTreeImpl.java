@@ -22,6 +22,9 @@ public class BTreeImpl<T extends Comparable<T>> implements BTree<T> {
 
 	@Override
 	public int height() {
+		if(this.isEmpty()){
+			return -1;
+		}
 		return height(this.root);
 	}
 
@@ -73,12 +76,11 @@ public class BTreeImpl<T extends Comparable<T>> implements BTree<T> {
 		if (node.isEmpty()) {
 			return 0;
 		} else {
-			int saida = node.size();
-			for (int i = 0; i < node.children.size(); i++) {
-				saida += size(node.getChildren().get(i));
+			int cont = node.size();
+			for(BNode<T> a:node.getChildren()){
+				cont += size(a);
 			}
-
-			return saida;
+			return cont;
 		}
 	}
 
@@ -117,38 +119,90 @@ public class BTreeImpl<T extends Comparable<T>> implements BTree<T> {
 	}
 
 	private void insert(BNode<T> node, T element) {
-		int index = 0;
-
-		while (index < node.getElements().size() && element.compareTo(node.getElementAt(index)) > 0) {
-			index++;
-		}
 
 		if (node.isLeaf()) {
 			node.addElement(element);
-			node.addChild(index, new BNode<T>(this.order));
+		}
 
-			if (node.getMaxKeys() < node.size()) {
-				node.split();
-
-				while (node.parent != null) {
-					node = node.parent;
-				}
-				this.root = node;
+		else{
+			int index = 0;
+			while (index < node.getElements().size() && node.getElementAt(index).compareTo(element) < 0) {
+				index++;
 			}
-		} else {
 			insert(node.getChildren().get(index), element);
+		}
+
+		if (node.getMaxKeys() < node.getElements().size()) {
+			split(node);
 		}
 
 	}
 
 	private void split(BNode<T> node) {
 
-		node.split();
+		int median = node.getElements().size() / 2;
+		T middle = node.getElements().get(median);
+
+		BNode<T> left = new BNode<T>(this.order);
+		BNode<T> right = new BNode<T>(this.order);
+
+
+
+		for (int i = 0; i < median; i++){
+			left.addElement(node.getElementAt(i));
+		}
+		for (int i = median + 1; i < node.getElements().size(); i++){
+			right.addElement(node.getElementAt(i));
+		}
+
+		if (node.equals(this.getRoot())) {
+			BNode<T> newRoot = new BNode<T>(order);
+			newRoot.addElement(middle);
+			node.setParent(newRoot);
+			this.root = newRoot;
+
+			for (int i = 0; i < node.getChildren().size(); i++) {
+				if (i <= median) {
+					left.addChild(i, node.getChildren().get(i));
+				} else {
+					right.addChild(i - median - 1, node.getChildren().get(i));
+				}
+			}
+
+			newRoot.addChild(0, left);
+			newRoot.addChild(1, right);
+			newRoot.getChildren().get(0).setParent(newRoot);
+			newRoot.getChildren().get(1).setParent(newRoot);
+
+		}else {
+
+			promote(node, left,right);
+		}
 
 	}
 
-	private void promote(BNode<T> node) {
-		node.promote();
+	private void promote(BNode<T> node, BNode<T> left, BNode<T> right) {
+
+		node.addChild(0, left);
+		node.addChild(1, right);
+		T medianElement = findMiddle(node);
+
+		node.getElements().clear();
+		node.addElement(medianElement);
+
+		BNode<T> parent = node.getParent();
+
+		if (parent != null) {
+			node.getChildren().get(0).setParent(parent);
+			node.getChildren().get(1).setParent(parent);
+			int index = parent.getChildren().indexOf(node);
+			parent.addElement(medianElement);
+			parent.addChild(index, node.getChildren().get(0));
+			parent.addChild(index + 1, node.getChildren().get(1));
+			node.getChildren().get(0).setParent(parent);
+			node.getChildren().get(1).setParent(parent);
+			parent.getChildren().remove(node);
+		}
 	}
 
 	// NAO PRECISA IMPLEMENTAR OS METODOS ABAIXO
@@ -168,6 +222,10 @@ public class BTreeImpl<T extends Comparable<T>> implements BTree<T> {
 	public void remove(T element) {
 		// NAO PRECISA IMPLEMENTAR
 		throw new UnsupportedOperationException("Not Implemented yet!");
+	}
+
+	private T findMiddle(BNode<T> node){
+		return node.getElements().get((node.getElements().size())/2);
 	}
 
 }
